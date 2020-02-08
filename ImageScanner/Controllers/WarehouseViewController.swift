@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WarehouseViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    private var indexpath: Int!
     override func viewDidLoad() {
         super.viewDidLoad()
        setupUI()
@@ -19,19 +20,23 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
     }
 }
-
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension WarehouseViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func getImageName(with index: Int) {
+        indexpath = index
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Constants.fileNames.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier, for: indexPath) as? PackageCollectionViewCell else {
             fatalError("Cell could not be dequeued")
         }
-        let imageName = Constants.fileNames[indexPath.row]
-        cell.configure(with: imageName)
+        cell.configure(with: Constants.fileNames[indexPath.row])
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presentDetail(with: indexPath.row)
     }
     //AutoLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -45,5 +50,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return Constants.minimumInteritemSpacingForSectionAt
+    }
+    @objc private func presentDetail(with indexPath: Int) {
+        guard let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailVC") as? DetailViewController else { return }
+        detailVC.jsonName = Constants.fileNames[indexPath]
+        present(detailVC, animated: true, completion: nil)
     }
 }
