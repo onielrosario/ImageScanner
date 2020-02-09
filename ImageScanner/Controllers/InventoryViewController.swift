@@ -10,9 +10,8 @@ import UIKit
 
 class InventoryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    let inventory = Utilities.getAllDatasetCount()
+    let inventory = Utilities.getCodeCount(for: nil)
     var allCodes = [String]()
-    var allCount = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -25,10 +24,10 @@ class InventoryViewController: UIViewController {
     }
     
     private func populateTableData() {
-        for (code,count) in inventory {
+        for code in inventory.keys {
             allCodes.append(code)
-            allCount.append(count)
         }
+        allCodes.sort()
     }
 }
 
@@ -41,7 +40,9 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("error trying to dequeue Inventory Cell")
         }
         cell.codeLabel.text = allCodes[indexPath.row]
-        cell.countLabel.text = allCount[indexPath.row].description
+        if let count = inventory[allCodes[indexPath.row]] {
+            cell.countLabel.text = "\(count)"
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

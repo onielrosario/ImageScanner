@@ -12,7 +12,6 @@ import UIKit
 class PackageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageButton: UIImageView!
     func configure(with imageName: String) {
-//        imageButton.setImage(UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal), for: .normal)
         imageButton.image = UIImage(named: imageName)
         layer.cornerRadius = 10
     }

@@ -13,10 +13,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var datasetSwitch: UISwitch!
-    private var packages = [Package]()
     private var inventoryCount = [String:Int]()
     private var codes = [String]()
-    private var count = [Int]()
     public var jsonName: String!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +22,12 @@ class DetailViewController: UIViewController {
     }
     private func setupUI() {
         imageView.image = UIImage(named: jsonName)
-        packageNumberLabel.text = "PACKAGE NUMBER #: " + Utilities.getFilenumber(input: jsonName)
-        let Allpackages = Bundle.main.decode([Package].self, from: "\(jsonName ?? "").json")
-        inventoryCount = Utilities.getCodeCount(inventory: Allpackages)
-        for (key,value) in inventoryCount {
-            codes.append(key)
-            count.append(value)
+        packageNumberLabel.text = Utilities.getFilenumber(input: jsonName)
+        inventoryCount = Utilities.getCodeCount(for: Bundle.main.decode([Package].self, from: jsonName!))
+        for code in inventoryCount.keys {
+            codes.append(code)
         }
+        codes.sort()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -46,7 +43,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("Error trying to dequeue DatasetCell")
         }
         cell.codeLabel.text = codes[indexPath.row]
-        cell.countLabel.text = count[indexPath.row].description
+        if let count = inventoryCount[codes[indexPath.row]] {
+            cell.countLabel.text = count.description
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -26,13 +26,13 @@ extension WarehouseViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Constants.fileNames.count
+        return Constants.allFiles.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier, for: indexPath) as? PackageCollectionViewCell else {
             fatalError("Cell could not be dequeued")
         }
-        cell.configure(with: Constants.fileNames[indexPath.row])
+        cell.configure(with: Constants.allFiles[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -53,7 +53,7 @@ extension WarehouseViewController: UICollectionViewDataSource, UICollectionViewD
     }
     @objc private func presentDetail(with indexPath: Int) {
         guard let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailVC") as? DetailViewController else { return }
-        detailVC.jsonName = Constants.fileNames[indexPath]
+        detailVC.jsonName = Constants.allFiles[indexPath]
         present(detailVC, animated: true, completion: nil)
     }
 }
