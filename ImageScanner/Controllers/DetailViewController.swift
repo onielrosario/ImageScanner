@@ -43,9 +43,7 @@ class DetailViewController: UIViewController {
         imageView.image = UIImage(named: jsonName)
         let barcodes = Bundle.main.decode([Package].self, from: jsonName!)
         barcodes.forEach { barcode in
-            if let image = imageView.image {
-                imageView.image = Utilities.DrawOnImage(startingImage: image, package: barcode)
-            }
+            imageView.image = Utilities.DrawOnImage(imageView: imageView, package: barcode)
         }
     }
 }

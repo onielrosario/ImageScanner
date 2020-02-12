@@ -30,7 +30,6 @@ class InventoryViewController: UIViewController {
         allCodes.sort()
     }
 }
-
 extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return inventory.count
@@ -41,7 +40,7 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.codeLabel.text = allCodes[indexPath.row]
         if let count = inventory[allCodes[indexPath.row]] {
-            cell.countLabel.text = "\(count)"
+            cell.countLabel.text = count.description
         }
         return cell
     }

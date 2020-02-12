@@ -10,11 +10,10 @@ import UIKit
 
 
 struct Constants {
-    // get all data from JSON files folder
-    static let allFiles = Utilities.getFilesFromBundle()
     static let warehouseCellIdentifier = "PackageCell"
     static let inventoryCellIdentifier = "InventoryCell"
     static let detailViewCellIdentifier = "DataCell"
+    static let na = "NA"
     // AutoLayout constants
         private static let verticalSpacing: CGFloat = 24
         private static let leftRightSpacing: CGFloat = 12
@@ -29,5 +28,4 @@ struct Constants {
         static let edgeInsets = UIEdgeInsets(top: verticalSpacing, left: leftRightSpacing, bottom: verticalSpacing, right: leftRightSpacing)
         static let minimumLineSpacingForSectionAt: CGFloat = verticalSpacing
         static let minimumInteritemSpacingForSectionAt: CGFloat = middleSpacing
-    
 }
