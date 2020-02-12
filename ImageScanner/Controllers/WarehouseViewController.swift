@@ -13,7 +13,7 @@ class WarehouseViewController: UIViewController {
     private var indexpath: Int!
     override func viewDidLoad() {
         super.viewDidLoad()
-       setupUI()
+        setupUI()
     }
     private func  setupUI() {
         collectionView.delegate = self
@@ -29,7 +29,7 @@ extension WarehouseViewController: UICollectionViewDataSource, UICollectionViewD
         return Constants.allFiles.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier, for: indexPath) as? PackageCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.warehouseCellIdentifier, for: indexPath) as? PackageCollectionViewCell else {
             fatalError("Cell could not be dequeued")
         }
         cell.configure(with: Constants.allFiles[indexPath.row])

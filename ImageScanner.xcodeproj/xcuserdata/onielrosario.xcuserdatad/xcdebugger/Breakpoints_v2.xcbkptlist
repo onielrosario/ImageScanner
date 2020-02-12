@@ -3,4 +3,29 @@
    uuid = "56F9C678-B87F-45D5-9EFC-DBC1B208DBA6"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            uuid = "E6F81601-B644-4331-95B3-5735476E57BA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "_CFRunLoopError_RunCalledWithInvalidMode"
+            moduleName = "">
+            <Locations>
+               <Location
+                  uuid = "E6F81601-B644-4331-95B3-5735476E57BA - a4a910a71ecc2804"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_CFRunLoopError_RunCalledWithInvalidMode"
+                  moduleName = "CoreFoundation"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

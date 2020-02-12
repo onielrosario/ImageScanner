@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var packageNumberLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var datasetSwitch: UISwitch!
+    @IBOutlet weak var boxesDatasetSwitch: UISwitch!
     private var inventoryCount = [String:Int]()
     private var codes = [String]()
     public var jsonName: String!
@@ -32,14 +32,31 @@ class DetailViewController: UIViewController {
         tableView.delegate = self
         tableView.tableFooterView = UIView()
     }
+    @IBAction func displayBoxes(_ sender: UISwitch) {
+        if sender.isOn {
+            displayData()
+        } else {
+            imageView.image = UIImage(named: jsonName)
+        }
+    }
+    private func displayData() {
+        imageView.image = UIImage(named: jsonName)
+        let barcodes = Bundle.main.decode([Package].self, from: jsonName!)
+        barcodes.forEach { barcode in
+            if let image = imageView.image {
+                imageView.image = Utilities.DrawOnImage(startingImage: image, package: barcode)
+            }
+        }
+    }
 }
+
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return inventoryCount.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as? DatasetTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.detailViewCellIdentifier, for: indexPath) as? DatasetTableViewCell else {
             fatalError("Error trying to dequeue DatasetCell")
         }
         cell.codeLabel.text = codes[indexPath.row]

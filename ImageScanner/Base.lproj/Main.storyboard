@@ -98,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R0s-Gv-Qea">
-                                <rect key="frame" x="20" y="582" width="374" height="200"/>
+                                <rect key="frame" x="20" y="576.5" width="374" height="200"/>
                                 <color key="backgroundColor" red="0.18663803840000001" green="0.83786784000000003" blue="0.72669224460000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="OYf-zu-Jyz"/>
@@ -143,24 +143,27 @@
                                 </prototypes>
                             </tableView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r95-tN-GsU">
-                                <rect key="frame" x="345" y="471" width="51" height="31"/>
+                                <rect key="frame" x="345" y="488.5" width="51" height="31"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="onTintColor" red="0.20638802789999999" green="0.21692750490000001" blue="0.2360207805" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="displayBoxes:" destination="QyP-0d-4S8" eventType="valueChanged" id="oqM-Vx-ax5"/>
+                                </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOW DATA ON IMAGE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5z-72-feb">
-                                <rect key="frame" x="72.5" y="473" width="262.5" height="29"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISPLAY DATA ON IMAGE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5z-72-feb">
+                                <rect key="frame" x="50" y="491" width="251.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9n-Tz-Now">
-                                <rect key="frame" x="20" y="551" width="43" height="21"/>
+                                <rect key="frame" x="20" y="545.5" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y46-iF-uGY">
-                                <rect key="frame" x="344" y="551" width="50" height="21"/>
+                                <rect key="frame" x="344" y="545.5" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -168,23 +171,23 @@
                         </subviews>
                         <color key="backgroundColor" red="0.18663803840000001" green="0.83786784000000003" blue="0.72669224460000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="R0s-Gv-Qea" firstAttribute="top" secondItem="W5z-72-feb" secondAttribute="bottom" constant="60" id="1Ei-S6-eow"/>
                             <constraint firstItem="R0s-Gv-Qea" firstAttribute="centerX" secondItem="Qyb-Gn-GeD" secondAttribute="centerX" id="5dT-QR-HOR"/>
                             <constraint firstItem="Qyb-Gn-GeD" firstAttribute="height" secondItem="6Xu-Xc-lsj" secondAttribute="height" multiplier="0.4" id="DVh-eA-bs3"/>
-                            <constraint firstItem="W5z-72-feb" firstAttribute="leading" secondItem="exZ-g3-TLe" secondAttribute="leading" constant="72.5" id="I7I-3N-GW0"/>
+                            <constraint firstItem="W5z-72-feb" firstAttribute="leading" secondItem="exZ-g3-TLe" secondAttribute="leading" constant="50" id="I7I-3N-GW0"/>
                             <constraint firstItem="R0s-Gv-Qea" firstAttribute="top" secondItem="S9n-Tz-Now" secondAttribute="bottom" constant="10" id="IWQ-0s-9yH"/>
                             <constraint firstItem="qez-Gx-aaI" firstAttribute="top" secondItem="exZ-g3-TLe" secondAttribute="top" constant="40" id="KVE-oA-c1m"/>
                             <constraint firstItem="r95-tN-GsU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="W5z-72-feb" secondAttribute="trailing" constant="8" symbolic="YES" id="Q6Z-9J-IcT"/>
                             <constraint firstItem="exZ-g3-TLe" firstAttribute="trailing" secondItem="Qyb-Gn-GeD" secondAttribute="trailing" constant="20" id="Qys-UE-9me"/>
                             <constraint firstItem="exZ-g3-TLe" firstAttribute="trailing" secondItem="r95-tN-GsU" secondAttribute="trailing" constant="20" id="U5F-Ds-4UJ"/>
+                            <constraint firstItem="r95-tN-GsU" firstAttribute="centerY" secondItem="W5z-72-feb" secondAttribute="centerY" id="b7g-dI-Eaq"/>
                             <constraint firstItem="S9n-Tz-Now" firstAttribute="leading" secondItem="exZ-g3-TLe" secondAttribute="leading" constant="20" id="db5-EG-aeP"/>
                             <constraint firstItem="R0s-Gv-Qea" firstAttribute="width" secondItem="Qyb-Gn-GeD" secondAttribute="width" id="eUZ-KA-FjC"/>
                             <constraint firstItem="Qyb-Gn-GeD" firstAttribute="leading" secondItem="exZ-g3-TLe" secondAttribute="leading" constant="20" id="eod-Qi-W0Y"/>
                             <constraint firstItem="Qyb-Gn-GeD" firstAttribute="centerY" secondItem="exZ-g3-TLe" secondAttribute="centerY" multiplier="0.6" constant="10" id="hC2-Ed-WVv"/>
-                            <constraint firstItem="r95-tN-GsU" firstAttribute="top" secondItem="Qyb-Gn-GeD" secondAttribute="bottom" constant="10" id="kZc-ZK-UKM"/>
-                            <constraint firstItem="R0s-Gv-Qea" firstAttribute="top" secondItem="W5z-72-feb" secondAttribute="bottom" constant="80" id="oo5-Uc-6Rn"/>
                             <constraint firstItem="Y46-iF-uGY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="S9n-Tz-Now" secondAttribute="trailing" constant="8" symbolic="YES" id="qe7-hZ-Buz"/>
                             <constraint firstItem="R0s-Gv-Qea" firstAttribute="top" secondItem="Y46-iF-uGY" secondAttribute="bottom" constant="10" id="qfr-Zu-qfu"/>
-                            <constraint firstItem="W5z-72-feb" firstAttribute="top" secondItem="Qyb-Gn-GeD" secondAttribute="bottom" constant="12" id="rOp-vd-l6w"/>
+                            <constraint firstItem="W5z-72-feb" firstAttribute="top" secondItem="Qyb-Gn-GeD" secondAttribute="bottom" constant="30" id="rOp-vd-l6w"/>
                             <constraint firstItem="exZ-g3-TLe" firstAttribute="trailing" secondItem="qez-Gx-aaI" secondAttribute="trailing" constant="20" id="rtJ-cd-kMc"/>
                             <constraint firstItem="exZ-g3-TLe" firstAttribute="trailing" secondItem="Y46-iF-uGY" secondAttribute="trailing" constant="20" id="wFe-gB-h5a"/>
                             <constraint firstItem="qez-Gx-aaI" firstAttribute="leading" secondItem="exZ-g3-TLe" secondAttribute="leading" constant="20" id="zE0-fr-lVn"/>
@@ -192,7 +195,7 @@
                         <viewLayoutGuide key="safeArea" id="exZ-g3-TLe"/>
                     </view>
                     <connections>
-                        <outlet property="datasetSwitch" destination="r95-tN-GsU" id="stN-4s-NKh"/>
+                        <outlet property="boxesDatasetSwitch" destination="r95-tN-GsU" id="stN-4s-NKh"/>
                         <outlet property="imageView" destination="Qyb-Gn-GeD" id="N1b-1H-FD3"/>
                         <outlet property="packageNumberLabel" destination="qez-Gx-aaI" id="ela-fP-Z1c"/>
                         <outlet property="tableView" destination="R0s-Gv-Qea" id="XdI-ej-AE9"/>

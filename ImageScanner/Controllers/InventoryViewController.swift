@@ -36,7 +36,7 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
         return inventory.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "InventoryCell", for: indexPath) as? InventoryTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.inventoryCellIdentifier, for: indexPath) as? InventoryTableViewCell else {
             fatalError("error trying to dequeue Inventory Cell")
         }
         cell.codeLabel.text = allCodes[indexPath.row]

@@ -10,13 +10,11 @@ import UIKit
 
 
 struct Constants {
-    // get count of all data from JSON files folder
+    // get all data from JSON files folder
     static let allFiles = Utilities.getFilesFromBundle()
-    
-    
-    static let cellIdentifier = "PackageCell"
-    
-    
+    static let warehouseCellIdentifier = "PackageCell"
+    static let inventoryCellIdentifier = "InventoryCell"
+    static let detailViewCellIdentifier = "DataCell"
     // AutoLayout constants
         private static let verticalSpacing: CGFloat = 24
         private static let leftRightSpacing: CGFloat = 12
