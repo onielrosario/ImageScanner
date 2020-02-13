@@ -12,18 +12,19 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var packageNumberLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var boxesDatasetSwitch: UISwitch!
     private var inventoryCount = [String:Int]()
     private var codes = [String]()
     public var jsonName: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
+    
     private func setupUI() {
         imageView.image = UIImage(named: jsonName)
         packageNumberLabel.text = Utilities.getFilenumber(input: jsonName)
-        inventoryCount = Utilities.getCodeCount(for: Bundle.main.decode([Package].self, from: jsonName!))
+        inventoryCount = Utilities.getCodeCount(for: Bundle.main.decode([Figure].self, from: jsonName!))
         for code in inventoryCount.keys {
             codes.append(code)
         }
@@ -32,6 +33,7 @@ class DetailViewController: UIViewController {
         tableView.delegate = self
         tableView.tableFooterView = UIView()
     }
+   
     @IBAction func displayBoxes(_ sender: UISwitch) {
         if sender.isOn {
             displayData()
@@ -39,9 +41,9 @@ class DetailViewController: UIViewController {
             imageView.image = UIImage(named: jsonName)
         }
     }
+    
     private func displayData() {
-        imageView.image = UIImage(named: jsonName)
-        let barcodes = Bundle.main.decode([Package].self, from: jsonName!)
+        let barcodes = Bundle.main.decode([Figure].self, from: jsonName!)
         barcodes.forEach { barcode in
             imageView.image = Utilities.DrawOnImage(imageView: imageView, package: barcode)
         }
@@ -62,7 +64,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.countLabel.text = count.description
         }
         return cell
+    
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }

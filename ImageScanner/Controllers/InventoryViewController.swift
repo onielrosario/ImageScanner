@@ -12,6 +12,7 @@ class InventoryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let inventory = Utilities.getCodeCount(for: nil)
     var allCodes = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -30,10 +31,12 @@ class InventoryViewController: UIViewController {
         allCodes.sort()
     }
 }
+ // MARK: - Extension
 extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return inventory.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.inventoryCellIdentifier, for: indexPath) as? InventoryTableViewCell else {
             fatalError("error trying to dequeue Inventory Cell")
@@ -44,6 +47,7 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }

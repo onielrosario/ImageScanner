@@ -8,22 +8,24 @@
 
 import UIKit
 
-
 struct Utilities {
+    /*
+     The following method returns all the names
+     from JSON files folder as a string collection.
+     */
     static func getFilesFromBundle() -> [String] {
         var files = [String]()
         let filemanager = FileManager.default
         let path = Bundle.main.resourcePath!
         do {
-            files = try filemanager.contentsOfDirectory(atPath: path).filter{$0.hasPrefix("img")}.sorted()
+            files = try filemanager.contentsOfDirectory(atPath: path).filter{$0.hasPrefix(Constants.filesFromDirectoryQuery)}.sorted()
         } catch {
             print(error)
         }
         return files
     }
     
-    // for specific json file
-    static func getCodeCount(for inventory: [Package]?) -> [String:Int] {
+    static func getCodeCount(for inventory: [Figure]?) -> [String:Int] {
         var dict = [String:Int]()
         if let individualInventory = inventory {
             for package in individualInventory.filter({ $0.code != nil && $0.code != Constants.na }) {
@@ -38,28 +40,30 @@ struct Utilities {
         }
         return dict
     }
-    
+
     static func getFilenumber(input: String) -> String {
-        return "PACKAGE NUMBER #: " + input.components(separatedBy: ".").first!.components(separatedBy: "g").last!
+        return Constants.sectionEnumerationLabel + input.components(separatedBy: ".").first!.components(separatedBy: "g").last!
     }
     
     static private func getAllCodeCount() -> [String:Int] {
-        var allJsonFiles = [Package]()
+        var allJsonFiles = [Figure]()
         Utilities.getFilesFromBundle().forEach { (filename) in
-            allJsonFiles.append(contentsOf: Bundle.main.decode([Package].self, from: filename))
+            allJsonFiles.append(contentsOf: Bundle.main.decode([Figure].self, from: filename))
         }
         return Utilities.getCodeCount(for: allJsonFiles)
     }
-    
-    // MARK: - Image Overlay Data
-    static func DrawOnImage(imageView: UIImageView, package: Package) -> UIImage {
+    /*
+        This method gets the current image from Imageview,
+        Apply customized Boxes/barcode frames and label over image with
+        CGRect values from its JSON,
+        re-render the image with context,
+        return the image
+     */
+    static func DrawOnImage(imageView: UIImageView, package: Figure) -> UIImage {
         UIGraphicsBeginImageContext(imageView.image?.size ?? CGSize(width: 0, height: 0))
         let startingImage = imageView.image!
-        // Draw the starting image in the current context as background
         startingImage.draw(at: CGPoint.zero)
-        // Get the current context
         let context = UIGraphicsGetCurrentContext()!
-        // get frames, origins, coordinates
         let imgWidth = CGFloat(package.imgSize.first!)
         let imgHeight = CGFloat(package.imgSize.last!)
         let x: CGFloat = package.rect.first!.first! * imgWidth
@@ -67,28 +71,24 @@ struct Utilities {
         let width: CGFloat = package.rect.last!.first! * imgWidth
         let height: CGFloat = package.rect.last!.last! * imgHeight
         let rect =  CGRect(x: x, y: imgHeight - y - height, width: width, height: height)
-        // add to context and customize
         context.addRect(rect)
         context.setStrokeColor(makeColor(package: package).cgColor)
         context.setLineWidth(3)
         context.drawPath(using: .stroke)
-        //code text
         if let code = package.code, code != Constants.na {
             makeLabelForCode(codeLabel: code, rect: rect, height: height)
         }
-        //finalize the render
         guard let myImage = UIGraphicsGetImageFromCurrentImageContext() else { return UIImage() }
         UIGraphicsEndImageContext()
         return myImage
     }
-    static private func makeColor(package: Package) -> UIColor {
+    
+    static private func makeColor(package: Figure) -> UIColor {
         switch package.className {
         case "box":
             return UIColor.magenta
-        case "barcode":
-            return .yellow
         default:
-            return .green
+            return .yellow
         }
     }
     

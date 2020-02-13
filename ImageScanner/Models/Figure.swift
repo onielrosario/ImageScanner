@@ -8,11 +8,10 @@
 
 import UIKit
 
-struct Package: Codable {
+struct Figure: Codable {
    let className: String
     let score: Double
     let imgSize: [Int]
     let rect: [[CGFloat]]
-    //depending on className will access code value
     let code: String?
 }
