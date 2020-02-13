@@ -6,7 +6,7 @@ An application that uses Artificial Inteligence for automated inventory entry.
 ## Jump to topic:
 * [Technologies - Frameworks - Architecture](https://github.com/onielrosario/ImageScanner#technologies---frameworks---architecture)
 * [Launch Screen](https://github.com/onielrosario/ImageScanner#launch-screen)
-* [Walkthrough](https://github.com/onielrosario/ImageScanner/edit/master/README.md#walkthrough)
+* [Walkthrough](https://github.com/onielrosario/ImageScanner#walkthrough)
 * [Features](https://github.com/onielrosario/ImageScanner#features)
 * [Timeframe and process](https://github.com/onielrosario/ImageScanner#timeframe-and-process)
 * [Future Implementations](https://github.com/onielrosario/ImageScanner#future-implementation)
