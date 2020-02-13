@@ -1,5 +1,7 @@
 # ImageScanner
+An application that uses Artificial Inteligence for Automated Inventory entry. 
 
+<img width="169" alt="warehouse screen" src="https://user-images.githubusercontent.com/43827399/74472215-cd829180-4e5e-11ea-8d22-ef293d3665eb.png">
 
 ## Run project:
 
