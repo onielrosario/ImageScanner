@@ -1,11 +1,6 @@
 # ImageScanner
 
 
-![Simulator Screen Shot - iPhone 11 Pro Max - 2020-02-13 at 12 04 52](https://user-images.githubusercontent.com/43827399/74469010-11729800-4e59-11ea-8e82-5fc900ccaca5.png)
-![Simulator Screen Shot - iPhone 11 Pro Max - 2020-02-08 at 14 24 12](https://user-images.githubusercontent.com/43827399/74469025-1899a600-4e59-11ea-8f2e-98c31636228c.png)
-
-
-
 ## Run project:
 
 * Xcode Version 11.3 
@@ -55,6 +50,8 @@ This detailed window includes:
 ### Second tab - Inventory:
 
 The user can see a list of all barcodes available for the entire dataset of waref house and the count for each.
+
+<img width="169" alt="Screen Shot 2020-02-12 at 1 40 21 PM" src="https://user-images.githubusercontent.com/43827399/74469025-1899a600-4e59-11ea-8f2e-98c31636228c.png">
 
 ## Features:
 
