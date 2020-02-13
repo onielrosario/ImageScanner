@@ -1,5 +1,11 @@
 # ImageScanner
 
+![Simulator Screen Shot - iPhone 11 Pro Max - 2020-02-13 at 12 01 13](https://user-images.githubusercontent.com/43827399/74468803-b04ac480-4e58-11ea-993b-a770178430f8.png)
+<img width="372" alt="Screen Shot 2020-02-12 at 1 40 21 PM" src="https://user-images.githubusercontent.com/43827399/74468929-ea1bcb00-4e58-11ea-9aa4-e8e674c06a1f.png">
+![Simulator Screen Shot - iPhone 11 Pro Max - 2020-02-13 at 12 04 52](https://user-images.githubusercontent.com/43827399/74469010-11729800-4e59-11ea-8e82-5fc900ccaca5.png)
+![Simulator Screen Shot - iPhone 11 Pro Max - 2020-02-08 at 14 24 12](https://user-images.githubusercontent.com/43827399/74469025-1899a600-4e59-11ea-8f2e-98c31636228c.png)
+![Simulator Screen Shot - iPhone 11 Pro Max - 2020-02-13 at 12 05 33](https://user-images.githubusercontent.com/43827399/74469058-264f2b80-4e59-11ea-93f4-f89cf331fa8d.png)
+
 ## Run project:
 
 * Xcode Version 11.3 
