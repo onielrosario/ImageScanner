@@ -94,7 +94,7 @@ struct Utilities {
     
     static private func makeLabelForCode(codeLabel: String, rect: CGRect, height: CGFloat) {
         let attributeDict: [NSAttributedString.Key : Any] = [
-            .font: UIFont.init(name: "Helvetica", size: 12)!,
+            .font: UIFont.init(name: Constants.codeLabelFontType, size: 12)!,
             .foregroundColor: UIColor.black,
             .backgroundColor: UIColor.green,
             .paragraphStyle: NSMutableParagraphStyle().mutableCopy(),

@@ -17,6 +17,7 @@ class InventoryViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
+    
     private func setupUI() {
         populateTableData()
         tableView.delegate = self

@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class PackageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageButton: UIImageView!
     

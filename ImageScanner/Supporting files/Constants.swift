@@ -15,8 +15,9 @@ struct Constants {
     static let inventoryCellIdentifier = "InventoryCell"
     static let detailViewCellIdentifier = "DataCell"
     static let na = "NA"
-    static let sectionEnumerationLabel = "PACKAGE NUMBER #: "
+    static let sectionEnumerationLabel = "SECTION NUMBER #: "
     static let filesFromDirectoryQuery = "img"
+    static let codeLabelFontType = "Helvetica"
     private static let verticalSpacing: CGFloat = 24
     private static let leftRightSpacing: CGFloat = 12
     private static let middleSpacing: CGFloat = 8
