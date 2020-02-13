@@ -64,7 +64,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.countLabel.text = count.description
         }
         return cell
-    
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
