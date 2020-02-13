@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
     private func setupUI() {
         imageView.image = UIImage(named: jsonName)
         packageNumberLabel.text = Utilities.getFilenumber(input: jsonName)
-        inventoryCount = Utilities.getCodeCount(for: Bundle.main.decode([Figure].self, from: jsonName!))
+        inventoryCount = Utilities.getCodeCount(for: Bundle.main.decode([Figure].self, from: jsonName))
         for code in inventoryCount.keys {
             codes.append(code)
         }
@@ -43,7 +43,7 @@ class DetailViewController: UIViewController {
     }
     
     private func displayData() {
-        let barcodes = Bundle.main.decode([Figure].self, from: jsonName!)
+        let barcodes = Bundle.main.decode([Figure].self, from: jsonName)
         barcodes.forEach { barcode in
             imageView.image = Utilities.DrawOnImage(imageView: imageView, package: barcode)
         }
