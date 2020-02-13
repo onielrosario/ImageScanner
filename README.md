@@ -3,6 +3,14 @@ An application that uses Artificial Inteligence for automated inventory entry.
 
 <img width="169" alt="warehouse screen" src="https://user-images.githubusercontent.com/43827399/74472215-cd829180-4e5e-11ea-8d22-ef293d3665eb.png">
 
+## Jump to topic:
+* [Technologies - Frameworks - Architecture](https://github.com/onielrosario/ImageScanner#technologies---frameworks---architecture)
+* [Launch Screen](https://github.com/onielrosario/ImageScanner#launch-screen)
+* [Walkthrough](https://github.com/onielrosario/ImageScanner/edit/master/README.md#walkthrough)
+* [Features](https://github.com/onielrosario/ImageScanner#features)
+* [Timeframe and process](https://github.com/onielrosario/ImageScanner#timeframe-and-process)
+* [Future Implementations](https://github.com/onielrosario/ImageScanner#future-implementation)
+
 ## Run project:
 
 * Xcode Version 11.3 
@@ -74,7 +82,7 @@ This information provides:
 * Backend Functionalities
 * Documentation
 
-## Future Implementation:
+## Future Implementations:
 
 ### Design
 * Multiple tables could be replaced by Nib files for reusability instead of creating a new one for each code/count table
