@@ -75,11 +75,11 @@ This information provides:
 
 ## Timeframe and process:
 
-* Wireframe/UX
-* Skeleton/App flow
-* UI/Design
-* Backend Functionalities
-* Documentation
+* Wireframe/UX/Hand drawn
+* Skeleton/Storyboard
+* UI/Colors/Font selection
+* Backend Functionalities/
+* Code improvement/Documentation
 
 ## Future Implementations:
 
