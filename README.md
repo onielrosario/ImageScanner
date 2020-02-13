@@ -6,7 +6,6 @@
 ![Simulator Screen Shot - iPhone 11 Pro Max - 2020-02-08 at 14 24 12](https://user-images.githubusercontent.com/43827399/74469025-1899a600-4e59-11ea-8f2e-98c31636228c.png)
 ![Simulator Screen Shot - iPhone 11 Pro Max - 2020-02-13 at 12 05 33](https://user-images.githubusercontent.com/43827399/74469058-264f2b80-4e59-11ea-93f4-f89cf331fa8d.png)
 
-<img width="169" alt="Screen Shot 2019-03-08 at 12 45 06 PM" src="https://user-images.githubusercontent.com/43827399/74468803-b04ac480-4e58-11ea-993b-a770178430f8.png">
 
 ## Run project:
 
@@ -43,6 +42,8 @@ Showing the App’s main brand.
 
 The user can see a list of thumbnail images available for selection and sorted accordingly.
 Each image represents a section for warehouse.
+
+<img width="169" alt="warehouse screen" src="https://user-images.githubusercontent.com/43827399/74469058-264f2b80-4e59-11ea-93f4-f89cf331fa8d.png">
 
 Upon selecting a thumbnail, user will be directed to a more detailed information view about this image/section.
 This detailed window includes:
