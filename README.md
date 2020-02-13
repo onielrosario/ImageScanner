@@ -3,13 +3,12 @@ An application that uses Artificial Inteligence for automated inventory entry.
 
 <img width="169" alt="warehouse screen" src="https://user-images.githubusercontent.com/43827399/74472215-cd829180-4e5e-11ea-8d22-ef293d3665eb.png">
 
-## Jump to topic:
+## Jump to topics:
 * [Technologies - Frameworks - Architecture](https://github.com/onielrosario/ImageScanner#technologies---frameworks---architecture)
 * [Launch Screen](https://github.com/onielrosario/ImageScanner#launch-screen)
 * [Walkthrough](https://github.com/onielrosario/ImageScanner#walkthrough)
 * [Features](https://github.com/onielrosario/ImageScanner#features)
 * [Timeframe and process](https://github.com/onielrosario/ImageScanner#timeframe-and-process)
-* [Future Implementations](https://github.com/onielrosario/ImageScanner#future-implementation)
 
 ## Run project:
 
