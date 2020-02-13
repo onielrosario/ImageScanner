@@ -1,5 +1,5 @@
 # ImageScanner
-An application that uses Artificial Inteligence for Automated Inventory entry. 
+An application that uses Artificial Inteligence for automated inventory entry. 
 
 <img width="169" alt="warehouse screen" src="https://user-images.githubusercontent.com/43827399/74472215-cd829180-4e5e-11ea-8d22-ef293d3665eb.png">
 
@@ -19,15 +19,15 @@ $ open ImageScanner.xcodeproj/
 
 ## Technologies - Frameworks - Architecture:
 
-* Swift 5 - For efficientcy and speed.
-* UIKit - For Front-End Development and access to CoreGraphics methods.
-* CoreGraphics - For Image Rendering functionalities.
-* MVC - Minimal architecture for V1. Models are built with option to migrate to higher architecture design with ease.
+* Swift 5 - For efficientcy and speed
+* UIKit - For Front-End development and access to CoreGraphics methods
+* CoreGraphics - For image rendering functionalities
+* MVC - Minimal architecture design. Models are built with option to migrate to higher architecture patterns with ease
 
 
 ## Launch Screen:
 
-Upon opening the app, the the user can see a splash screen welcome showing the App’s main brand.
+Upon opening the app, the user can see a splash screen welcome showing company’s brand.
 
 <img width="169" alt="Screen Shot 2019-03-08 at 12 45 06 PM" src="https://user-images.githubusercontent.com/43827399/74468803-b04ac480-4e58-11ea-993b-a770178430f8.png">
 
@@ -35,8 +35,8 @@ Upon opening the app, the the user can see a splash screen welcome showing the A
 
 ### First Tab - Warehouse:
 
-The user can see a list of thumbnail images available for selection and sorted accordingly.
-Each image represents a section for warehouse.
+The user can see a list of thumbnail images available for selection, sorted accordingly.
+Each image represents a section for single warehouse.
 
 <img width="169" alt="warehouse screen" src="https://user-images.githubusercontent.com/43827399/74469058-264f2b80-4e59-11ea-93f4-f89cf331fa8d.png">
 
@@ -69,7 +69,7 @@ This information provides:
 ## Timeframe and process:
 
 * Wireframe/UX
-*  Skeleton/App flow
+* Skeleton/App flow
 * UI/Design
 * Backend Functionalities
 * Documentation
@@ -77,8 +77,8 @@ This information provides:
 ## Future Implementation:
 
 ### Design
-* Multiple tables could be replaced by Nib files for reusability instead of creating a new one for each code/count table.
-* New Section higher in the App flow hierarchy to allow selection on multiple location inventories as this API only provides data for single warehouse
+* Multiple tables could be replaced by Nib files for reusability instead of creating a new one for each code/count table
+* Sections higher in the app flow hierarchy, or in thumbnail list should allow exploring on multiple location inventories as this API only provides data for single warehouse
 
 ### Code optimization
-* For thumbnail list and all-inventory window, as the app scales in data entry, pagination technology can be implemented to limit data request until more is needed, as well as Caching the data already requested. 
+* For thumbnail list and all-inventory window, as the app scales in data entry, Pagination technology can be implemented to limit data request until more is needed, as well as Caching the data already requested 
