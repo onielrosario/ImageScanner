@@ -29,7 +29,8 @@ Showing the App’s main brand.
 
 ## Walkthrough:
 
-First Tab:
+### First Tab - Warehouse:
+
 The user can see a list of thumbnail images available for selection and sorted accordingly.
 Each image represents a section for warehouse.
 
@@ -38,6 +39,10 @@ This detailed window includes:
 
 * the section number 
 * A table showing the barcodes available for this section number and the count for each
+
+### Second tab - Inventory:
+
+The user can see a list of all barcodes available for the entire dataset of waref house and the count for each.
 
 ## Features:
 
