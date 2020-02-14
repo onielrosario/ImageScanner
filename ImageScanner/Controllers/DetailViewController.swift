@@ -12,9 +12,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var packageNumberLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    private var inventoryCount = [String:Int]()
     private var codes = [String]()
     public var jsonName: String!
+    private var inventoryCount = [String:Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +29,7 @@ class DetailViewController: UIViewController {
             codes.append(code)
         }
         codes.sort()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
+        tableView.setupTableView(with: self)
     }
    
     @IBAction func displayBoxes(_ sender: UISwitch) {

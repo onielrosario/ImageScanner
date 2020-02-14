@@ -20,9 +20,7 @@ class InventoryViewController: UIViewController {
     
     private func setupUI() {
         populateTableData()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.tableFooterView = UIView()
+        tableView.setupTableView(with: self)
     }
     
     private func populateTableData() {
